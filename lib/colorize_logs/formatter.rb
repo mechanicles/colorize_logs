@@ -1,13 +1,15 @@
 # frozen_string_literal: true
 
-require 'active_support/tagged_logging'
-require 'colorize'
+require "active_support/tagged_logging"
+require "colorize"
 
 module ColorizeLogs
   class Formatter < ::ActiveSupport::Logger::SimpleFormatter
     include ActiveSupport::TaggedLogging::Formatter
 
     def initialize
+      super
+
       @configuration = { matchers: {} }
     end
 
@@ -20,9 +22,7 @@ module ColorizeLogs
     def call(severity, time, progname, msg)
       return if msg.blank?
 
-      msg = [
-        colorized_message(msg)
-      ].compact.join(' ')
+      msg = [colorize_message(msg)].compact.join(" ")
 
       super severity, time, progname, msg
     end
@@ -31,7 +31,7 @@ module ColorizeLogs
 
     attr_accessor :configuration
 
-    def colorized_message(msg)
+    def colorize_message(msg)
       msg = msg.is_a?(String) ? msg : msg.inspect
       args = matched?(msg)
 

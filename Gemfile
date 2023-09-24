@@ -12,3 +12,9 @@ gem "minitest", "~> 5.0"
 gem "rubocop", "~> 1.21"
 
 gem "activesupport"
+
+gem "colorize"
+
+group :test do
+  gem 'mocha'
+end
