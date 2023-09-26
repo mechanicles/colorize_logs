@@ -13,6 +13,8 @@ and etc.
 
 ![colorize_logs](https://user-images.githubusercontent.com/77895/270565495-a75fc46d-b574-4fbe-9976-998abbf0b7b7.png)
 
+[![Build Status](https://github.com/mechanicles/colorize_logs/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/mechanicles/colorize_logs/actions)
+
 ## Installation
 
 Add this line to your application’s Gemfile:
