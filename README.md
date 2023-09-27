@@ -20,9 +20,7 @@ and etc.
 Add this line to your application’s Gemfile:
 
 ```ruby
-group :development do
-  gem "colorize_logs"
-end
+gem "colorize_logs"
 ```
 
 If bundler is not being used to manage dependencies, install the gem by executing:
